@@ -18,11 +18,7 @@ CREATE PROCEDURE GetProductsInLimitByCategoryName
 AS
 BEGIN
   SELECT
-    P.ProductID,
-    P.ProductName,
-    C.CategoryName,
-    P.UnitsInStock,
-    (P.UnitsInStock) AS Quantity
+    TOP(@LimitOfQuantity) *
   FROM Products AS P
   JOIN Categories AS C ON C.CategoryID = P.CategoryID
   WHERE C.CategoryName LIKE @CategoryName
@@ -32,3 +28,6 @@ EXEC GetProductsInLimitByCategoryName
   @CategoryName = 'Beverages',
   @LimitOfQuantity = 10
 GO
+
+-- Drop SP
+DROP PROCEDURE GetProductsInLimitByCategoryName

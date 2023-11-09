@@ -25,3 +25,6 @@ END
 EXEC GetOrdersByCustomerName
   @CustomerName = 'Alfreds Futterkiste'
 GO
+
+-- Drop SP
+DROP PROCEDURE GetOrdersByCustomerName

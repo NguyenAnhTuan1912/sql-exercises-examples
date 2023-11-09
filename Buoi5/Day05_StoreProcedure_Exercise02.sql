@@ -27,3 +27,6 @@ EXEC UpdateUnitsInStockOfProductById
   @ProductID = 1,
   @NewUnitsInStock = 40
 GO
+
+-- Drop SP
+DROP PROCEDURE UpdateUnitsInStockOfProductById
